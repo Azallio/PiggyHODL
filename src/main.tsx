@@ -1,12 +1,19 @@
 import { createRoot } from 'react-dom/client'
-import { createBrowserRouter, RouterProvider } from 'react-router-dom'
+import {
+  createBrowserRouter,
+  RouterProvider,
+} from "react-router";
 
-import App from './App.tsx'
+import Game_rules from './game-rules'
+import Scoreboard from './scoreboard'
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <App />
+    children: [
+      { index: true, Component: Scoreboard },
+      { path: "game-rules", Component: Game_rules }
+    ]
   }
 ])
 
