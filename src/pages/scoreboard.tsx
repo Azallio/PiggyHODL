@@ -1,7 +1,9 @@
+import Header from "../page-components/header"
+
 function Scoreboard() {
   return (
     <>
-    <div>qqq</div>
+      <Header />
     </>
   )
 }

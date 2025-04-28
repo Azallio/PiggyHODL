@@ -1,0 +1,76 @@
+@import url('https://fonts.googleapis.com/css2?family=Hanken+Grotesk:ital,wght@0,100..900;1,100..900&display=swap');
+
+* {
+    font-family: "Hanken Grotesk";
+    font-weight: 600;
+}
+
+header {
+    width: 1440px;
+    height: 90px;
+    justify-content: space-between;
+    padding-top: 12px;
+    padding-right: 64px;
+    padding-bottom: 12px;
+    padding-left: 64px;
+    background: #FFFFFF;
+}
+
+.GRContainer {
+    width: 697.4990234375px;
+    height: 65.998046875px;
+    gap: 45px;
+    display: flex;
+    align-items: center;
+}
+
+.Logo {
+    width: 55.86262893676758px;
+    height: 50.91278076171875px;
+    top: 7.54px;
+    left: 5.19px;
+}
+
+.GRNavlinkText {
+    width: 96px;
+    height: 20px;
+    gap: 48px;
+
+    font-size: 16px;
+    line-height: 20px;
+    letter-spacing: 0%;
+    text-transform: uppercase;
+    color: #212121;
+}
+
+.JTGContainer {
+    width: 262px;
+    height: 66px;
+    gap: 48px;
+}
+
+.JTGNavlink {
+    background: #FFBFFB;
+    width: 186px;
+    height: 50px;
+    padding-top: 16px;
+    padding-right: 32px;
+    padding-bottom: 16px;
+    padding-left: 32px;
+    gap: 4px;
+    border-radius: 40px;
+}
+
+.JTGNavlinkText {
+    width: 122px;
+    height: 18px;
+    font-size: 16px;
+    line-height: 18px;
+    letter-spacing: 1%;
+    text-transform: uppercase;
+    color: #212121;
+}
+
+img {
+    vertical-align: middle;
+}

@@ -1,7 +1,9 @@
+import Header from "../page-components/header"
+
 function Game_rules() {
   return (
     <>
-        <div>qq</div>
+      <Header />
     </>
   )
 }

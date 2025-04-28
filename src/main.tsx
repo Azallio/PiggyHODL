@@ -4,8 +4,8 @@ import {
   RouterProvider,
 } from "react-router";
 
-import Game_rules from './game-rules'
-import Scoreboard from './scoreboard'
+import Game_rules from './pages/game-rules'
+import Scoreboard from './pages/scoreboard'
 
 const router = createBrowserRouter([
   {
