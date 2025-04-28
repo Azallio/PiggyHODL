@@ -1,8 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Hanken+Grotesk:ital,wght@0,100..900;1,100..900&display=swap');
+@import "tailwindcss";
 
-* {
-    font-family: "Hanken Grotesk";
-    font-weight: 600;
+#root {
+    display: flex;
+    justify-content: center;
 }
 
 header {
@@ -14,6 +15,9 @@ header {
     padding-bottom: 12px;
     padding-left: 64px;
     background: #FFFFFF;
+    display: flex;
+    font-family: "Hanken Grotesk";
+    font-weight: 600;
 }
 
 .GRContainer {
@@ -47,6 +51,9 @@ header {
     width: 262px;
     height: 66px;
     gap: 48px;
+    align-content: center;
+    display: flex;
+    align-items: center;
 }
 
 .JTGNavlink {
@@ -73,4 +80,8 @@ header {
 
 img {
     vertical-align: middle;
+}
+
+.FourDots {
+    height: 32px;
 }
