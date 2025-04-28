@@ -7,8 +7,8 @@ function Footer() {
             <footer>
                 <p>©piggyHODL all rights reserved</p>
                 <section className="privatePolity">
-                    <p>Terms of use</p>
-                    <p>Privacy policy</p>
+                    <span className="privatePolityText1">Terms of use</span>
+                    <span className="privatePolityText2">Privacy policy</span>
                 </section>
             </footer>
         </>
