@@ -4,6 +4,9 @@ import "tailwindcss"
 import PigForHeader from "../assets/PigForHeader.svg"
 import FourDotsForHeader from "../assets/FourDotsForHeader.svg"
 
+import '../css/resetStyle.css'
+import "../css/page-components-css/header.css"
+
 function Header() {
   return (
     <>
@@ -13,7 +16,7 @@ function Header() {
           <NavLink to="game-rules" className="GRNavlinkText">GAME RULES</NavLink>
         </section>
         <section className="JTGContainer">
-          <NavLink to="" className="JTGNavlink"><p className="JTGNavlinkText">Join the game</p></NavLink>
+          <NavLink to="tg://resolve?domain=test_piggygame_bot" className="JTGNavlink"><p className="JTGNavlinkText">Join the game</p></NavLink>
           <img className="FourDots" src={FourDotsForHeader} alt="FourDots" />
         </section>
       </header>

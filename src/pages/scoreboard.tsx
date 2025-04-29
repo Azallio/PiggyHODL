@@ -1,16 +1,49 @@
 import Footer from "../page-components/footer"
 import Header from "../page-components/header"
 
-import "../css/resetStyle.css"
-import "../css/page-components-css/header.css"
-import "../css/page-components-css/footer.css"
+import PigWithTgLogo from "../assets/PigWithTgLogo.svg"
+import FullPig from "../assets/FullPig.svg"
+
+import "../css/scoreboard.css"
 
 function Scoreboard() {
   return (
     <>
       <Header />
       <main>
-        
+        <section className="scoreBoard">
+          <div className="titleScoreboard">
+            <p>Scoreboard</p>
+            <div className="quantityPretendents">
+                <p></p>
+            </div>
+          </div>
+          <article className="scoreBoardList">
+          </article>
+          <article className="info">
+            <div className="bank">
+              <span className="Text1110">1110</span>
+              <span className="TextTonOnBank">TON on bank</span>
+            </div>
+            <div className="Piggies1000Container">
+              <div className="Piggies1000TextContainer">
+                <p>1000 piggies</p>
+                <p>For subscription on PiggyHODL in telegram</p>
+              </div>
+              <button className="SubscribeButton">
+                Subscribe
+              </button>
+              <img className="pigWithTgLogo" src={PigWithTgLogo} alt="" />
+            </div>
+            <div className="bottomInfoContainer">
+              <img className="fullPigSvg" src={FullPig} alt="" />
+              <div className="bottomInfoContainerText">
+                <p>Join the game</p>
+                <button>Play piggygame</button>
+              </div>
+            </div>
+          </article>
+        </section>
       </main>
       <Footer />
     </>
