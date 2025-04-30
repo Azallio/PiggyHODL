@@ -6,7 +6,10 @@ import FullPig from "../assets/FullPig.svg"
 
 import "../css/scoreboard.css"
 
+import fetchScoreboard from "../api/requests"
+
 function Scoreboard() {
+  fetchScoreboard();
   return (
     <>
       <Header />
