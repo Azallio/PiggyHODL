@@ -5,24 +5,36 @@ import PigWithTgLogo from "../assets/PigWithTgLogo.svg"
 import FullPig from "../assets/FullPig.svg"
 
 import "../css/scoreboard.css"
+import getData from "../api/requests"
 
-import fetchScoreboard from "../api/requests"
 
-function Scoreboard() {
-  fetchScoreboard();
+
+// async function getUser() {
+//   getData()
+//     .then((res) => {
+//       console.log(res)
+//     })
+// }
+export default function Scoreboard() {
+  // getUser()
   return (
     <>
       <Header />
       <main>
         <section className="scoreBoard">
-          <div className="titleScoreboard">
-            <p>Scoreboard</p>
-            <div className="quantityPretendents">
+          <article>
+            <div className="titleScoreboard">
+              <p>Scoreboard</p>
+              <div className="quantityPretendents">
                 <p></p>
+              </div>
             </div>
-          </div>
-          <article className="scoreBoardList">
+            <div className="scoreBoardList">
+              { }
+            </div>
           </article>
+
+
           <article className="info">
             <div className="bank">
               <span className="Text1110">1110</span>
@@ -36,10 +48,10 @@ function Scoreboard() {
               <button className="SubscribeButton">
                 Subscribe
               </button>
-              <img className="pigWithTgLogo" src={PigWithTgLogo} alt="" />
+              <img className="pigWithTgLogo" src={PigWithTgLogo} />
             </div>
             <div className="bottomInfoContainer">
-              <img className="fullPigSvg" src={FullPig} alt="" />
+              <img className="fullPigSvg" src={FullPig} />
               <div className="bottomInfoContainerText">
                 <p>Join the game</p>
                 <button>Play piggygame</button>
@@ -53,4 +65,4 @@ function Scoreboard() {
   )
 }
 
-export default Scoreboard
+

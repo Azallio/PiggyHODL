@@ -1,28 +1,32 @@
-import axios from "axios"
+import { useQuery } from "@tanstack/react-query";
+import axios from "axios";
 
-const URL = "https://devgame.piggyhodl.xyz/api"
+export default async function getData() {
+  const { isPending, error, data } = useQuery({
+    queryKey: ["pretendentsData"],
+    queryFn: () => {
+      return fetchScoreboard()
+    }
+  })
+  console.log(data)
+  if (isPending) "loading"
+  if (error) return 'An error has occurred: ' + error.message
+  return data;
+}
 
-
-const fetchScoreboard = async () => {
-  try {
-    const response = await axios.get(
-      'https://devgame.piggyhodl.xyz/api/User/scoreboard',
-      {
-        params: {
-          limit: 10,  
-          offset: 0  
-        },
-        headers: {
-          Authorization: 'AllioToken',
-          Accept: 'application/json'          
-        }
+async function fetchScoreboard() {
+  const res = await axios.get(
+    // "https://devgame.piggyhodl.xyz/api/User/scoreboard",
+    "http://localhost:8080/regDataOfUser.json",
+    {
+      // params: {
+      //   limit: 10,
+      //   offset: 0
+      // },
+      headers: {
+        Accept: "text/plain"
       }
-    );
-    console.log('Данные:', response.data);
-  } catch (error: any) {
-    console.error('Ошибка:', error.response?.data || error.message);
-  }
+    }
+  );
+  return res
 };
-
-
-export default fetchScoreboard;

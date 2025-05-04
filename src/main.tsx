@@ -4,8 +4,15 @@ import {
   RouterProvider,
 } from "react-router";
 
+import {
+  QueryClient,
+  QueryClientProvider,
+} from '@tanstack/react-query'
+
 import Game_rules from './pages/game-rules'
 import Scoreboard from './pages/scoreboard'
+
+const queryClient = new QueryClient()
 
 const router = createBrowserRouter([
   {
@@ -18,5 +25,8 @@ const router = createBrowserRouter([
 ])
 
 createRoot(document.getElementById('root')!).render(
-  <RouterProvider router={router} />
+  <QueryClientProvider client={queryClient}>
+    <RouterProvider router={router} />
+  </QueryClientProvider>
+
 )
