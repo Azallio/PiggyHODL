@@ -4,13 +4,13 @@ import MiniPeople from "../assets/MiniPeople.svg"
 
 import { Pretendent } from "./render-pretendent" //type import
 
-export default function GetUserScore(item: Pretendent) {
+export default function GetUserScore(item: Pretendent, userId: number) {
     return (
         <>
             <div className="w-[493px] h-[24px] flex gap-[16px] items-center">
                 <div className="w-[393px] h-[20px] flex gap-[4px] items-center">
                     <p className="w-[21px] h-[21px] flex font-semibold text-[16px] tracking-[0%] leading-[20px]">
-                        {`#${item.id}`}
+                        {`#${userId}`}
                     </p>
                     <p className="w-[368px] h-[20px] flex pl-0.5 items-center">
                         @{item.username}

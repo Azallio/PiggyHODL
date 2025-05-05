@@ -6,16 +6,21 @@ import FullPig from "../assets/FullPig.svg"
 
 import "../css/scoreboard.css"
 import getPretendentArray from "../modules/render-pretendent"
-import { JSX, useState } from "react"
+import { JSX, useEffect, useState } from "react"
 
 
-export default function Scoreboard() {
+const Scoreboard = () => {
+  // useEffect(() => {
+      getPretendentArray().then((res) => {
+        setElements(res)
+      })
+  // }, [])
+
   const [elements, setElements] = useState<JSX.Element[]>([]);
-  getPretendentArray().then((res) => {
-    setElements(res)
-  })
+
 
   return (
+
     <>
       <Header />
       <main>
@@ -32,11 +37,9 @@ export default function Scoreboard() {
                 return <div key={id} className="w-[533px] h-[84px] rounded-[25px] py-[12px] px-[20px] flex flex-col gap-[12px]">
                   {pretendent}
                 </div>
-              })
-              }
+              })}
             </div>
           </article>
-
 
           <article className="info">
             <div className="bank">
@@ -67,5 +70,7 @@ export default function Scoreboard() {
     </>
   )
 }
+
+export default Scoreboard
 
 

@@ -22,14 +22,20 @@ export default async function getPretendentArray() {
     .then((res) => {
       if (typeof res === "string") {
         const LoadingBar = <span>Loading...</span>
-        console.log(LoadingBar)
         return [LoadingBar]
       } else {
-        const pretendentArray: JSX.Element[] = res.data.items.map((item: Pretendent) => {
-          return GetUserScore(item);
+        const sortListOfPret = res.data.items.sort((a: Pretendent, b: Pretendent) => {
+          if (a.pigsAmount !== b.pigsAmount) {
+            return b.pigsAmount - a.pigsAmount;
+          } else {
+            return a.id - b.id
+          }
+        })
+        const pretendentArray: JSX.Element[] = sortListOfPret.map((item: Pretendent, index: number) => {
+          return GetUserScore(item, ++index);
         })
         return pretendentArray
       }
     })
-    return itemList
+  return itemList
 }

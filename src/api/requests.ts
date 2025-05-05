@@ -21,7 +21,7 @@ async function fetchScoreboard() {
     // "http://localhost:3000/api/items",
     {
       params: {
-        limit: 10,
+        limit: 40,
         offset: 0
       },
       headers: {
