@@ -5,18 +5,16 @@ import PigWithTgLogo from "../assets/PigWithTgLogo.svg"
 import FullPig from "../assets/FullPig.svg"
 
 import "../css/scoreboard.css"
-import getData from "../api/requests"
+import getPretendentArray from "../modules/render-pretendent"
+import { JSX, useState } from "react"
 
 
-
-// async function getUser() {
-//   getData()
-//     .then((res) => {
-//       console.log(res)
-//     })
-// }
 export default function Scoreboard() {
-  // getUser()
+  const [elements, setElements] = useState<JSX.Element[]>([]);
+  getPretendentArray().then((res) => {
+    setElements(res)
+  })
+
   return (
     <>
       <Header />
@@ -26,11 +24,16 @@ export default function Scoreboard() {
             <div className="titleScoreboard">
               <p>Scoreboard</p>
               <div className="quantityPretendents">
-                <p></p>
+                <p> pretenders</p>
               </div>
             </div>
             <div className="scoreBoardList">
-              { }
+              {elements.map((pretendent, id) => {
+                return <div key={id} className="w-[533px] h-[84px] rounded-[25px] py-[12px] px-[20px] flex flex-col gap-[12px]">
+                  {pretendent}
+                </div>
+              })
+              }
             </div>
           </article>
 

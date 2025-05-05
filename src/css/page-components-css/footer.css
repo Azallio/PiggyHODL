@@ -13,6 +13,7 @@ footer {
     font-weight: 600;
     display: flex;
     text-transform: uppercase;
+    margin-right: 3%;
 
     &>p {
         width: 272px;

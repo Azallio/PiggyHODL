@@ -26,6 +26,7 @@ main {
     width: 533px;
     height: 564px;
     gap: 12px;
+    overflow: scroll;
 }
 
 .titleScoreboard {

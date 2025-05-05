@@ -8,21 +8,22 @@ export default async function getData() {
       return fetchScoreboard()
     }
   })
-  console.log(data)
-  if (isPending) "loading"
-  if (error) return 'An error has occurred: ' + error.message
+  if (isPending) return "loading";
+
+  if (error) return 'An error has occurred: ' + error.message;
+
   return data;
 }
 
 async function fetchScoreboard() {
   const res = await axios.get(
-    // "https://devgame.piggyhodl.xyz/api/User/scoreboard",
-    "http://localhost:8080/regDataOfUser.json",
+    "https://devgame.piggyhodl.xyz/api/User/scoreboard",
+    // "http://localhost:3000/api/items",
     {
-      // params: {
-      //   limit: 10,
-      //   offset: 0
-      // },
+      params: {
+        limit: 10,
+        offset: 0
+      },
       headers: {
         Accept: "text/plain"
       }

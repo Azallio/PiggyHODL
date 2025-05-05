@@ -1,0 +1,42 @@
+import Piglet from "../assets/Piglet.svg"
+import Ticket from "../assets/ticket-svgrepo.svg"
+import MiniPeople from "../assets/MiniPeople.svg"
+
+import { Pretendent } from "./render-pretendent" //type import
+
+export default function GetUserScore(item: Pretendent) {
+    return (
+        <>
+            <div className="w-[493px] h-[24px] flex gap-[16px] items-center">
+                <div className="w-[393px] h-[20px] flex gap-[4px] items-center">
+                    <p className="w-[21px] h-[21px] flex font-semibold text-[16px] tracking-[0%] leading-[20px]">
+                        {`#${item.id}`}
+                    </p>
+                    <p className="w-[368px] h-[20px] flex pl-0.5 items-center">
+                        @{item.username}
+                    </p>
+                </div>
+                <div className="w-[84px] min-w-[84px] h-[24px] flex gap-[10px] items-center">
+                    <p className="w-[49px] h-[20px] font-[Hanken_Grotesk] font-semibold text-[16px] tracking-[0%] leading-[20px] justify-end">
+                        {item.pigsAmount}
+                    </p>
+                    <img src={Piglet} alt="Пятачок" className="w-[24px] h-[24px] left-[21px]" />
+                </div>
+            </div>
+            <div className="w-[493px] h-[24px] flex justify-between">
+                <div className="w-[94px] h-[24px] flex gap-[8px] items-center">
+                    <img src={Ticket} alt="Билет" />
+                    <p className="w-[62px] h-[18px] font-[Hanken_Grotesk] font-semibold text-[14px] tracking-[0%] leading-[18px] justify-end">
+                        {item.ticketsAmount} tickets
+                    </p>
+                </div>
+                <div className="w-[107px] h-[24px] flex gap-[8px] items-center">
+                    <p className="w-[75px] h-[18px] font-[Hanken_Grotesk] font-semibold text-[14px] tracking-[0%] leading-[18px] justify-end">
+                        {item.referrals} referrals
+                    </p>
+                    <img src={MiniPeople} alt="Мини человечек" />
+                </div>
+            </div>
+        </>      
+    );
+}
