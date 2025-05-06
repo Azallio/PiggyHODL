@@ -3,12 +3,10 @@
 @import "tailwindcss";
 
 main {
+    display: flex;
     width: 1440px;
     height: 674px;
-    padding-top: 16px;
-    padding-right: 175px;
-    padding-bottom: 24px;
-    padding-left: 175px;
+    padding: 15px 175px 24px 175px;
     gap: 24px;
     margin-right: 3.5%;
     letter-spacing: 0%;
@@ -23,10 +21,13 @@ main {
 }
 
 .scoreBoardList {
+    display: flex;
+    flex-direction: column;
     width: 533px;
     height: 564px;
     gap: 12px;
     overflow: scroll;
+
 }
 
 .titleScoreboard {
@@ -37,6 +38,7 @@ main {
     flex-shrink: 0;
     align-items: center;
     padding-left: 5%;
+    color: #D874B9;
 }
 
 .titleScoreboard>p {
@@ -54,21 +56,21 @@ main {
     display: flex;
     width: 142px;
     height: 48px;
-    padding-top: 15px;
-    padding-bottom: 15px;
+    padding-block: 15px;
     gap: 4px;
     border-radius: 25px;
     background-color: #FFF2FE;
     flex-shrink: 0;
     justify-content: center;
     align-items: center;
+    color:#4B4B4B;
 }
 
 .quantityPretendents>p {
     display: flex;
     width: 110px;
     height: 20px;
-    font-family: "Hanken Grotesk";
+    font-family: "Hanken Grotesk", sans-serif;
     font-weight: 500;
     font-size: 16px;
     line-height: 20px;
@@ -81,14 +83,14 @@ main {
     height: 634px;
     gap: 16px;
     display: flex;
+    justify-content: space-around;
     flex-direction: column;
 }
 
 .bank {
     width: 533px;
     height: 206px;
-    padding-top: 24px;
-    padding-bottom: 24px;
+    padding-block: 24px;
     border-radius: 25px;
     display: flex;
     flex-direction: column;
@@ -101,7 +103,7 @@ main {
 .Text1110 {
     width: 231px;
     height: 120px;
-    font-family: "Source Serif 4";
+    font-family: "Source Serif 4", sans-serif;
     font-weight: 500;
     font-style: italic;
     font-size: 120px;
@@ -113,7 +115,7 @@ main {
 .TextTonOnBank {
     width: 180px;
     height: 38px;
-    font-family: "Hanken Grotesk";
+    font-family: "Hanken Grotesk", sans-serif;
     font-weight: 200;
     font-size: 32px;
     line-height: 120%;
@@ -156,7 +158,6 @@ main {
     line-height: 28px;
     text-transform: uppercase;
     color: #D874B9;
-
 }
 
 .Piggies1000TextContainer>p:last-child {
@@ -171,20 +172,15 @@ main {
 
 /*--------------------------*/
 
-.SubscribeButton {
+#SubscribeButton {
     display: flex;
     width: 180px;
     height: 50px;
-    padding-top: 16px;
-    padding-right: 32px;
-    padding-bottom: 16px;
-    padding-left: 32px;
-    gap: 4px;
+    padding: 16px 32px;
     border-radius: 40px;
     background-color: #FFBFFB;
-    font-family: "Hanken Grotesk";
+    font-family: "Hanken Grotesk", sans-serif;
     font-weight: 600;
-    font-size: 16px;
     line-height: 18px;
     letter-spacing: 1%;
     text-transform: uppercase;
@@ -213,17 +209,16 @@ main {
 
 .fullPigSvg {
     margin-top: 22px;
-    width: 172.73855590820312px;
-    height: 179.31373596191406px;
+    width: 172px;
+    height: 179px;
 }
 
 .bottomInfoContainerText {
     display: flex;
     flex-direction: column;
-    width: 312.2614440917969px;
+    width: 312px;
     height: 202px;
-    padding-top: 24px;
-    padding-bottom: 24px;
+    padding-block: 24px;
     gap: 48px;
     align-items: center;
 }
@@ -243,14 +238,11 @@ main {
 .bottomInfoContainerText>button {
     width: 213px;
     height: 58px;
-    padding-top: 20px;
-    padding-right: 40px;
-    padding-bottom: 20px;
-    padding-left: 40px;
+    padding: 20px 40px;
     gap: 4px;
     border-radius: 40px;
     background-color: #FFBFFB;
-    font-family: "Hanken Grotesk";
+    font-family: "Hanken Grotesk", sans-serif;
     font-weight: 600;
     font-size: 16px;
     line-height: 18px;

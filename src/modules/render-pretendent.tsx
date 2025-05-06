@@ -10,26 +10,24 @@ export type Pretendent = {
   pigsAmount: number,
   ticketsAmount: number,
   referrals: number
-}
+};
 
 export default function getPretendentArray() {
-  const itemList: AxiosResponse | string = getData()
-  console.log(itemList)
-  if (typeof itemList === "string") {
-    const LoadingBar = <span>Loading...</span>
-    return [LoadingBar]
-  } else {
-    const sortListOfPret = itemList?.data.items.sort((a: Pretendent, b: Pretendent) => {
-      if (a.pigsAmount !== b.pigsAmount) {
+  const itemList: AxiosResponse | string = getData();
+  if (typeof itemList !== "string") {
+    const sortListOfPret = itemList.data.items.sort((a: Pretendent, b: Pretendent) => {
+      if (a.pigsAmount !== b.pigsAmount)
         return b.pigsAmount - a.pigsAmount;
-      } else {
-        return a.id - b.id
-      }
-    })
+      else
+        return a.id - b.id;
+    });
     const pretendentArray: JSX.Element[] = sortListOfPret.map((item: Pretendent, index: number) => {
       return GetUserScore(item, ++index);
-    })
-    console.log(pretendentArray)
-    return pretendentArray
+    });
+    const quantityPretendents: number = itemList.data.totalItems;
+    return { "Elements": pretendentArray, "quantityPretendents": quantityPretendents };
   }
-}
+  else
+    return { "Elements": [<span>Loading...</span>], "quantityPretendents": 0 };
+};
+

@@ -6,8 +6,16 @@ import FullPig from "../assets/FullPig.svg"
 
 import "../css/scoreboard.css"
 import getPretendentArray from "../modules/render-pretendent"
+// import { getBalance } from "../api/requests"
 
 const Scoreboard = () => {
+  const pretendentsArray = getPretendentArray()
+  let isHidden: boolean = false
+  function HideOverLay():undefined {
+    isHidden = true
+    isHidden ? "opacity-100" : "opacity-0"
+  }
+
   return (
     <>
       <Header />
@@ -17,12 +25,12 @@ const Scoreboard = () => {
             <div className="titleScoreboard">
               <p>Scoreboard</p>
               <div className="quantityPretendents">
-                <p> pretenders</p>
+                <p>{pretendentsArray.quantityPretendents} pretendents</p>
               </div>
             </div>
-            <div className="scoreBoardList">
-              {getPretendentArray().map((pretendent, id) => {
-                return <div key={id} className="w-[533px] h-[84px] rounded-[25px] py-[12px] px-[20px] flex flex-col gap-[12px]">
+            <div className="scoreBoardList mt-5 overflow-hidden">
+              {pretendentsArray.Elements.map((pretendent, id) => {
+                return <div key={id} className="w-[533px] h-[84px] rounded-[25px] py-[12px] px-[20px] flex flex-col gap-[12px] transition-colors duration-600 hover:bg-[#FFF2FE] ">
                   {pretendent}
                 </div>
               })}
@@ -39,7 +47,7 @@ const Scoreboard = () => {
                 <p>1000 piggies</p>
                 <p>For subscription on PiggyHODL in telegram</p>
               </div>
-              <button className="SubscribeButton">
+              <button id="SubscribeButton" className={isHidden ? "opacity-0" : "opacity-100"} onClick={HideOverLay()}>
                 Subscribe
               </button>
               <img className="pigWithTgLogo" src={PigWithTgLogo} />
