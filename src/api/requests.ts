@@ -1,7 +1,7 @@
 import { useQuery } from "@tanstack/react-query";
 import axios from "axios";
 
-export default async function getData() {
+export default function getData() {
   const { isPending, error, data } = useQuery({
     queryKey: ["pretendentsData"],
     queryFn: () => {
@@ -16,18 +16,9 @@ export default async function getData() {
 }
 
 async function fetchScoreboard() {
-  const res = await axios.get(
-    "https://devgame.piggyhodl.xyz/api/User/scoreboard",
-    // "http://localhost:3000/api/items",
-    {
-      params: {
-        limit: 40,
-        offset: 0
-      },
-      headers: {
-        Accept: "text/plain"
-      }
-    }
-  );
-  return res
-};
+  const res = await axios.get("https://devgame.piggyhodl.xyz/api/User/scoreboard", {
+    params: { limit: 20, offset: 0 },
+    headers: { Accept: "text/plain" },
+  });
+  return res;
+}

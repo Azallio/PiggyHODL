@@ -12,7 +12,7 @@ import {
 import Game_rules from './pages/game-rules'
 import Scoreboard from './pages/scoreboard'
 
-const queryClient = new QueryClient()
+export const queryClient = new QueryClient()
 
 const router = createBrowserRouter([
   {

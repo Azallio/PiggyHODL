@@ -6,21 +6,9 @@ import FullPig from "../assets/FullPig.svg"
 
 import "../css/scoreboard.css"
 import getPretendentArray from "../modules/render-pretendent"
-import { JSX, useEffect, useState } from "react"
-
 
 const Scoreboard = () => {
-  // useEffect(() => {
-      getPretendentArray().then((res) => {
-        setElements(res)
-      })
-  // }, [])
-
-  const [elements, setElements] = useState<JSX.Element[]>([]);
-
-
   return (
-
     <>
       <Header />
       <main>
@@ -33,7 +21,7 @@ const Scoreboard = () => {
               </div>
             </div>
             <div className="scoreBoardList">
-              {elements.map((pretendent, id) => {
+              {getPretendentArray().map((pretendent, id) => {
                 return <div key={id} className="w-[533px] h-[84px] rounded-[25px] py-[12px] px-[20px] flex flex-col gap-[12px]">
                   {pretendent}
                 </div>

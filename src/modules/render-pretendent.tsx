@@ -1,7 +1,8 @@
 import getData from "../api/requests"
-import { JSX, ReactElement } from "react"
+import { JSX } from "react"
 
 import GetUserScore from "./singleUserScore"
+import { AxiosResponse } from "axios"
 
 export type Pretendent = {
   id: number,
@@ -11,31 +12,24 @@ export type Pretendent = {
   referrals: number
 }
 
-// export async function addPretendentToScoreboard() {
-//   const itemList = await getPretendentArray().then((res)=>{return res});
-//   console.log(itemList)
-//   return itemList;
-// }
-
-export default async function getPretendentArray() {
-  const itemList = await getData()
-    .then((res) => {
-      if (typeof res === "string") {
-        const LoadingBar = <span>Loading...</span>
-        return [LoadingBar]
+export default function getPretendentArray() {
+  const itemList: AxiosResponse | string = getData()
+  console.log(itemList)
+  if (typeof itemList === "string") {
+    const LoadingBar = <span>Loading...</span>
+    return [LoadingBar]
+  } else {
+    const sortListOfPret = itemList?.data.items.sort((a: Pretendent, b: Pretendent) => {
+      if (a.pigsAmount !== b.pigsAmount) {
+        return b.pigsAmount - a.pigsAmount;
       } else {
-        const sortListOfPret = res.data.items.sort((a: Pretendent, b: Pretendent) => {
-          if (a.pigsAmount !== b.pigsAmount) {
-            return b.pigsAmount - a.pigsAmount;
-          } else {
-            return a.id - b.id
-          }
-        })
-        const pretendentArray: JSX.Element[] = sortListOfPret.map((item: Pretendent, index: number) => {
-          return GetUserScore(item, ++index);
-        })
-        return pretendentArray
+        return a.id - b.id
       }
     })
-  return itemList
+    const pretendentArray: JSX.Element[] = sortListOfPret.map((item: Pretendent, index: number) => {
+      return GetUserScore(item, ++index);
+    })
+    console.log(pretendentArray)
+    return pretendentArray
+  }
 }
