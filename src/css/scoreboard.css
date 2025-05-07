@@ -2,251 +2,43 @@
 @import url('https://fonts.googleapis.com/css2?family=Hanken+Grotesk:ital,wght@0,100..900;1,100..900&display=swap');
 @import "tailwindcss";
 
+#root {
+    display: flex;
+    flex-direction: column;
+    min-height: 100%;
+    align-items: center;
+}
+
+html,
+body {
+    height: 100%;
+}
+
 main {
     display: flex;
-    width: 1440px;
-    height: 674px;
-    padding: 15px 175px 24px 175px;
-    gap: 24px;
-    margin-right: 3.5%;
-    letter-spacing: 0%;
+    flex: 1 1 auto;
 }
 
-.scoreBoard {
-    width: 533px;
-    height: 634px;
-    gap: 24px;
-    display: flex;
-    flex-wrap: nowrap;
-}
-
-.scoreBoardList {
-    display: flex;
-    flex-direction: column;
-    width: 533px;
-    height: 564px;
-    gap: 12px;
-    overflow: scroll;
-
-}
-
-.titleScoreboard {
-    width: 533px;
-    height: 48px;
-    display: flex;
-    justify-content: space-between;
-    flex-shrink: 0;
-    align-items: center;
-    padding-left: 5%;
-    color: #D874B9;
-}
-
-.titleScoreboard>p {
-    width: 391px;
-    height: 38px;
+.sourseSerif4 {
     font-family: "Source Serif 4";
-    font-weight: 600;
-    font-size: 34px;
-    line-height: 38px;
-    text-transform: uppercase;
-    margin-right: 13%;
 }
 
-.quantityPretendents {
-    display: flex;
-    width: 142px;
-    height: 48px;
-    padding-block: 15px;
-    gap: 4px;
-    border-radius: 25px;
-    background-color: #FFF2FE;
-    flex-shrink: 0;
-    justify-content: center;
-    align-items: center;
-    color:#4B4B4B;
-}
-
-.quantityPretendents>p {
-    display: flex;
-    width: 110px;
-    height: 20px;
+.hankenGrotesk {
     font-family: "Hanken Grotesk", sans-serif;
-    font-weight: 500;
-    font-size: 16px;
-    line-height: 20px;
-    align-content: center;
 }
 
-.info {
-    flex-shrink: 0;
-    width: 533px;
-    height: 634px;
-    gap: 16px;
-    display: flex;
-    justify-content: space-around;
-    flex-direction: column;
-}
-
-.bank {
-    width: 533px;
-    height: 206px;
-    padding-block: 24px;
-    border-radius: 25px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+.bgcPink {
     background-color: #FFF2FE;
 }
 
-/* text elements in bank */
+.bgcDarkPink {
+    background-color: #FFBFFB;
+}
 
-.Text1110 {
-    width: 231px;
-    height: 120px;
-    font-family: "Source Serif 4", sans-serif;
-    font-weight: 500;
-    font-style: italic;
-    font-size: 120px;
-    line-height: 120px;
-    text-align: center;
+.cDarkPink {
+    color:#D874B9;
+}
+
+.cPink {
     color: #FFBFFB;
-}
-
-.TextTonOnBank {
-    width: 180px;
-    height: 38px;
-    font-family: "Hanken Grotesk", sans-serif;
-    font-weight: 200;
-    font-size: 32px;
-    line-height: 120%;
-    letter-spacing: -1%;
-    text-align: center;
-    color: #000000;
-}
-
-/*--------------------------*/
-
-.Piggies1000Container {
-    display: flex;
-    flex-direction: column;
-    width: 533px;
-    height: 190px;
-    gap: 32px;
-    border-radius: 25px;
-    padding: 24px;
-    background-color: #FFF2FE;
-    flex-wrap: wrap;
-    overflow: hidden;
-}
-
-/* Text elements in Piggies1000Container*/
-
-.Piggies1000TextContainer {
-    width: 485px;
-    height: 60px;
-    gap: 12px;
-    display: flex;
-    flex-direction: column;
-}
-
-.Piggies1000TextContainer>p:first-child {
-    width: 485px;
-    height: 28px;
-    font-family: "Source Serif 4";
-    font-weight: 600;
-    font-size: 24px;
-    line-height: 28px;
-    text-transform: uppercase;
-    color: #D874B9;
-}
-
-.Piggies1000TextContainer>p:last-child {
-    width: 485px;
-    height: 20px;
-    font-family: "Hanken Grotesk";
-    font-weight: 400;
-    font-size: 16px;
-    line-height: 20px;
-    color: #000000;
-}
-
-/*--------------------------*/
-
-#SubscribeButton {
-    display: flex;
-    width: 180px;
-    height: 50px;
-    padding: 16px 32px;
-    border-radius: 40px;
-    background-color: #FFBFFB;
-    font-family: "Hanken Grotesk", sans-serif;
-    font-weight: 600;
-    line-height: 18px;
-    letter-spacing: 1%;
-    text-transform: uppercase;
-    color: #000000;
-    justify-content: center;
-    flex-shrink: 0;
-}
-
-.pigWithTgLogo {
-    position: relative;
-    width: 168px;
-    height: 168px;
-    top: 29%;
-    right: 47%;
-}
-
-.bottomInfoContainer {
-    display: flex;
-    width: 533px;
-    height: 202px;
-    padding-right: 24px;
-    gap: 24px;
-    border-radius: 25px;
-    background-color: #FFBFFB33;
-}
-
-.fullPigSvg {
-    margin-top: 22px;
-    width: 172px;
-    height: 179px;
-}
-
-.bottomInfoContainerText {
-    display: flex;
-    flex-direction: column;
-    width: 312px;
-    height: 202px;
-    padding-block: 24px;
-    gap: 48px;
-    align-items: center;
-}
-
-.bottomInfoContainerText>p {
-    width: 258px;
-    height: 48px;
-    font-family: "Source Serif 4";
-    font-weight: 500;
-    font-style: italic;
-    font-size: 48px;
-    line-height: 48px;
-    text-align: center;
-    color: #D874B9;
-}
-
-.bottomInfoContainerText>button {
-    width: 213px;
-    height: 58px;
-    padding: 20px 40px;
-    gap: 4px;
-    border-radius: 40px;
-    background-color: #FFBFFB;
-    font-family: "Hanken Grotesk", sans-serif;
-    font-weight: 600;
-    font-size: 16px;
-    line-height: 18px;
-    letter-spacing: 1%;
-    text-transform: uppercase;
-    color: #0D0D0D;
 }

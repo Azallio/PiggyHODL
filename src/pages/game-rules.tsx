@@ -1,7 +1,6 @@
 import Footer from "../page-components/footer"
 import Header from "../page-components/header"
 
-import "../css/resetStyle.css"
 import "../css/page-components-css/header.css"
 import "../css/page-components-css/footer.css"
 import "../css/game-rules.css"
@@ -17,7 +16,7 @@ function Game_rules() {
         </section>
         <section className="col-2 flex flex-col ">
           <article className="w-[645px] flex flex-col h-[3102px] gap-[84px]">
-            <h2 className="h-[34px] font-semibold text-[28px] leading-[120%] tracking-[0%] uppercase hankenGrotesk text-black">Общие положения и правила игры</h2>
+            <h2 className="h-[34px]  text-[28px] ">Общие положения и правила игры</h2>
             <div className="h-[305px] gap-[24px] flex flex-col justify-between ">
               <h3 className="h-[29px] font-semibold text-[24px] leading-[120%] tracking-[0%] uppercase hankenGrotesk text-black">Общие положения</h3>
               <ul className="flex flex-col gap-[24px] list-decimal ml-5">

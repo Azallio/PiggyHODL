@@ -4,7 +4,6 @@ import "tailwindcss"
 import PigForHeader from "../assets/PigForHeader.svg"
 import FourDotsForHeader from "../assets/FourDotsForHeader.svg"
 
-import '../css/resetStyle.css'
 import "../css/page-components-css/header.css"
 
 function Header() {

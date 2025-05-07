@@ -1,5 +1,4 @@
 import "tailwindcss"
-import "../css/resetStyle.css"
 import "../css/page-components-css/footer.css"
 import { NavLink } from "react-router";
 
