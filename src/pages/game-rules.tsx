@@ -6,6 +6,7 @@ import "../css/page-components-css/footer.css"
 import "../css/game-rules.css"
 import PigWithTea from "../assets/pigWithTea.svg"
 
+
 function Game_rules() {
   return (
     <>
@@ -14,12 +15,12 @@ function Game_rules() {
         <section className="shrink-0">
           <img className="PigWithTea" src={PigWithTea} alt="Pig_With_Tea" />
         </section>
-        <section className="col-2 flex flex-col ">
-          <article className="w-[645px] flex flex-col h-[3102px] gap-[84px]">
-            <h2 className="h-[34px]  text-[28px] ">Общие положения и правила игры</h2>
-            <div className="h-[305px] gap-[24px] flex flex-col justify-between ">
+        <section className="col-2 flex flex-col">
+          <article className="w-161.25 h-775.5 flex flex-col gap-21">
+            <h2 className="h-8.5 text-[28px] ">Общие положения и правила игры</h2>
+            <div className="h-76.25 gap-6 flex flex-col justify-between ">
               <h3 className="h-[29px] font-semibold text-[24px] leading-[120%] tracking-[0%] uppercase hankenGrotesk text-black">Общие положения</h3>
-              <ul className="flex flex-col gap-[24px] list-decimal ml-5">
+              <ul className="flex flex-col gap-6 list-decimal ml-5">
                 <li>Игра предназначена для развлечения и может использоваться пользователями только в личных, некоммерческих целях.</li>
                 <li>Все пользователи должны соблюдать правила, изложенные в данном документе, а также придерживаться принципов честной игры и взаимного уважения.</li>
                 <li>Игра доступна пользователям через приложение (игровой клиент), которое должно быть запущено в облачном мессенджере Telegram.</li>
