@@ -11,6 +11,11 @@
     grid-template-columns: 1fr 1fr;
 }
 
+.insideList>li {
+    display:list-item ;
+    list-style-type: disc;
+}
+
 @layer components {
     #game-rule-section div {
         @apply flex flex-col h-max;
@@ -20,12 +25,16 @@
         @apply flex flex-col gap-6;
     }
 
-    #game-rule-section li>ul {
-        @apply flex flex-col list-disc;
-    }
-
     #game-rule-section ol {
         @apply list-decimal flex flex-col gap-6 ml-5 h-max text-[16px] tracking-normal leading-5 text-black font-extralight;
+    }
+
+    #game-rule-section li>ul>li {
+        @apply list-item list-disc ml-5;
+    }
+
+    #game-rule-section li>ul {
+        @apply flex gap-2 flex-col;
     }
 
     #game-rule-section ul>li {
