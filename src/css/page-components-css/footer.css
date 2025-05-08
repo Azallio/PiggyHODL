@@ -1,55 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Hanken+Grotesk:ital,wght@0,100..900;1,100..900&display=swap');
 @import "tailwindcss";
 
-footer {
-    width: 1440px;
-    height: 20px;
-    justify-content: space-between;
-    padding-right: 175px;
-    padding-left: 175px;
-    margin-bottom: 16px;
-    color: #A4A4A4;
+.hankenGrotesk{
     font-family: "Hanken Grotesk";
-    font-weight: 600;
-    display: flex;
-    text-transform: uppercase;
-    margin-right: 3%;
-
-    &>p {
-        color: #A4A4A4;
-        width: 272px;
-        height: 18px;
-        font-family: "Hanken Grotesk";
-        font-weight: 600;
-        font-size: 16px;
-        line-height: 18px;
-        letter-spacing: 0%;
-        text-transform: uppercase;
-    }
-}
-
-
-
-.privatePolicyContainer {
-    display: flex;
-    width: 295px;
-    height: 20px;
-    gap: 64px;
-    align-items: center;
-}
-
-.termsOfUse {
-    width: 110px;
-    height: 20px;
-    font-size: 16px;
-    line-height: 20px;
-    letter-spacing: 0%;
-}
-
-.privatePolicy {
-    width: 121px;
-    height: 20px;
-    font-size: 16px;
-    line-height: 20px;
-    letter-spacing: 0%;
 }
