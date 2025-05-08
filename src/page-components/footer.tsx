@@ -14,7 +14,6 @@ function Footer() {
                     <NavLink to="https://telegram.org/tos/mini-apps">
                         <span className="privatePolicy">Privacy policy</span>
                     </NavLink>
-
                 </section>
             </footer>
         </>

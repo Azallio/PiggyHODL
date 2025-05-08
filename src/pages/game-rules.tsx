@@ -3,17 +3,19 @@ import Header from "../page-components/header"
 
 import "../css/game-rules.css"
 import PigWithTea from "../assets/pigWithTea.svg"
+import PigShadow from "../assets/shadowOfPig.svg" 
 
 
 function Game_rules() {
   return (
     <>
       <Header />
-      <main className=" main  w-360 h-1480.75 px-16 mt-18 gap-21 grid grid-cols-[1fr_1fr]">
-        <section className="shrink-0">
-          <img className="PigWithTea" src={PigWithTea} alt="Pig_With_Tea" />
+      <main className="w-360 h-1480.75 px-16 mt-18 gap-21 grid grid-cols-[1fr_1fr]">
+        <section className="w-1/2 flex flex-col">
+          <img className="w-43 h-45 top-130 left-3.25 relative z-10" src={PigWithTea} alt="Pig_With_Tea" />
+          <img className="w-50 h-10 top-118 relative" src={PigShadow}/>
         </section>
-        <section className="w-161.25 col-2 flex flex-col gap-21 hankenGrotesk">
+        <section id="game-rule-section" className="w-161.25 col-2 flex flex-col gap-21 hankenGrotesk">
           <article className="h-max flex flex-col gap-21">
             <div className="h-max gap-6">
               <h2 className="mb-2">Общие положения и правила игры</h2>

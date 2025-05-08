@@ -11,55 +11,40 @@
     grid-template-columns: 1fr 1fr;
 }
 
-.PigWithTea {
-    grid-column: 2/2;
-    width: 172.73855590820312px;
-    height: 179.31373596191406px;
-    top: 592px;
-    left: 13px;
-    position: relative;
-}
-
-.generalRules {
-    width: 645px;
-    height: 3168px;
-    gap: 32px;
-}
-
 @layer components {
-    div {
+    #game-rule-section div {
         @apply flex flex-col h-max;
     }
 
-    div>ul {
+    #game-rule-section div>ul {
         @apply flex flex-col gap-6;
     }
 
-    li>ul {
+    #game-rule-section li>ul {
         @apply flex flex-col list-disc;
     }
 
-    ol {
+    #game-rule-section ol {
         @apply list-decimal flex flex-col gap-6 ml-5 h-max text-[16px] tracking-normal leading-5 text-black font-extralight;
     }
 
-    ul>li {
+    #game-rule-section ul>li {
         @apply flex flex-col gap-2 h-max text-[16px] tracking-normal leading-5 text-black font-extralight;
     }
 
-    h4 {
+    #game-rule-section h4 {
         @apply h-5 font-semibold text-[16px] tracking-normal leading-5 text-black;
     }
 
-    p {
+    #game-rule-section p {
         @apply h-max text-[16px] tracking-normal leading-5 text-black font-extralight;
     }
 
-    h2 {
+    #game-rule-section h2 {
         @apply w-161.25 h-8.5 text-[28px] font-semibold leading-[120%] tracking-normal uppercase text-black;
     }
 
-    h3 {
+    #game-rule-section h3 {
         @apply w-161.25 h-7.25 font-semibold text-2xl leading-[120%] tracking-normal uppercase text-black;
     }
 }
