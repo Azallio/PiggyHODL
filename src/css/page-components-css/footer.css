@@ -16,6 +16,7 @@ footer {
     margin-right: 3%;
 
     &>p {
+        color: #A4A4A4;
         width: 272px;
         height: 18px;
         font-family: "Hanken Grotesk";

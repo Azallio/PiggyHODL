@@ -2,20 +2,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Hanken+Grotesk:ital,wght@0,100..900;1,100..900&display=swap');
 @import "tailwindcss";
 
-
 .hankenGrotesk {
     font-family: "Hanken Grotesk";
 }
 
 .main {
-    
-    width: 1440px;
-    height: 5923px;
-    padding-top: 0;
-    padding-right: 64px;
-    padding-left: 64px;
-    margin-top: 72px;
-    gap: 84px;
     display: grid;
     grid-template-columns: 1fr 1fr;
 }
@@ -35,6 +26,40 @@
     gap: 32px;
 }
 
-/* .btn {
-    @apply font-semibold leading-[120%] tracking-[0%] uppercase hankenGrotesk text-black;
-} */
+@layer components {
+    div {
+        @apply flex flex-col h-max;
+    }
+
+    div>ul {
+        @apply flex flex-col gap-6;
+    }
+
+    li>ul {
+        @apply flex flex-col list-disc;
+    }
+
+    ol {
+        @apply list-decimal flex flex-col gap-6 ml-5 h-max text-[16px] tracking-normal leading-5 text-black font-extralight;
+    }
+
+    ul>li {
+        @apply flex flex-col gap-2 h-max text-[16px] tracking-normal leading-5 text-black font-extralight;
+    }
+
+    h4 {
+        @apply h-5 font-semibold text-[16px] tracking-normal leading-5 text-black;
+    }
+
+    p {
+        @apply h-max text-[16px] tracking-normal leading-5 text-black font-extralight;
+    }
+
+    h2 {
+        @apply w-161.25 h-8.5 text-[28px] font-semibold leading-[120%] tracking-normal uppercase text-black;
+    }
+
+    h3 {
+        @apply w-161.25 h-7.25 font-semibold text-2xl leading-[120%] tracking-normal uppercase text-black;
+    }
+}

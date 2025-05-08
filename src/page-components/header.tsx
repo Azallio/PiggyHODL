@@ -15,7 +15,7 @@ function Header() {
           <NavLink to="game-rules" className="GRNavlinkText">GAME RULES</NavLink>
         </section>
         <section className="JTGContainer">
-          <NavLink to="tg://resolve?domain=test_piggygame_bot" className="JTGNavlink"><p className="JTGNavlinkText">Join the game</p></NavLink>
+          <NavLink to="tg://resolve?domain=test_piggygame_bot" className="JTGNavlink hover:opacity-[50%] duration-150">Join the game</NavLink>
           <img className="FourDots" src={FourDotsForHeader} alt="FourDots" />
         </section>
       </header>

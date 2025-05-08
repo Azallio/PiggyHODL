@@ -56,7 +56,7 @@ const Scoreboard = () => {
                   For subscription on PiggyHODL in telegram
                 </p>
               </div>
-              <button className=" w-45 h-12.5 flex justify-center shrink-0 font-semibold leading-4.5 tracking-[1%] uppercase hover:cursor-pointer text-black py-4 px-8 rounded-[40px] bgcDarkPink hankenGrotesk"
+              <button className="w-45 h-12.5 flex justify-center shrink-0 font-semibold leading-4.5 tracking-[1%] uppercase hover:cursor-pointer hover:opacity-[50%] duration-150 text-black py-4 px-8 rounded-[40px] bgcDarkPink hankenGrotesk"
                 onClick={linkToTgCommunity}>
                 Subscribe
               </button>
@@ -68,7 +68,7 @@ const Scoreboard = () => {
                 <p className="w-64.5 h-12 sourseSerif4 font-medium italic text-5xl leading-12 items-center cDarkPink">
                   Join the game
                 </p>
-                <button onClick={linkToTgBot} className="w-53.25 h-14.5 px-10 py-5 gap-1 rounded-[40px] hover:cursor-pointer bgcDarkPink hankenGrotesk font-semibold text-[16px] leading-4.5 tracking-[1%] uppercase text-[#0D0D0D]">
+                <button onClick={linkToTgBot} className="w-53.25 h-14.5 px-10 py-5 gap-1 rounded-[40px] hover:cursor-pointer hover:opacity-[50%] duration-150 bgcDarkPink hankenGrotesk font-semibold text-[16px] leading-4.5 tracking-[1%] uppercase text-[#0D0D0D]">
                   Play piggygame
                 </button>
               </div>
