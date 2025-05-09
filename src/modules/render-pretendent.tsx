@@ -4,6 +4,8 @@ import { JSX } from "react"
 import GetUserScore from "./singleUserScore"
 import { AxiosResponse } from "axios"
 
+import Loader from "../assets/loading-spinner.svg"
+
 export type Pretendent = {
   id: number,
   username: string,
@@ -28,6 +30,14 @@ export default function getPretendentArray() {
     return { "Elements": pretendentArray, "quantityPretendents": quantityPretendents };
   }
   else
-    return { "Elements": [<span>Loading...</span>], "quantityPretendents": 0 };
+    return {
+      "Elements": [
+        <div className="flex flex-col items-center">
+          <img src={Loader} className="w-6 animate-spin" />
+          <span>Loading...</span>
+        </div>
+        ],
+      "quantityPretendents": 0
+    };
 };
 

@@ -29,7 +29,7 @@ const Scoreboard = () => {
                 </p>
               </div>
             </div>
-            <div id="ScoreBoardList" className="w-133.25 h-141 flex flex-col gap-3 mt-5 overflow-scroll">
+            <div id="ScoreBoardList" className="w-133.25 h-141 flex flex-col gap-3 mt-5 overflow-scroll text-center">
               {pretendentsArray.Elements.map((pretendent, id) => {
                 return <div key={id} className="w-133.25 h-21 rounded-3xl py-3 px-5 flex flex-col gap-3 transition-colors duration-600 hover:bg-[#FFF2FE]">
                   {pretendent}
