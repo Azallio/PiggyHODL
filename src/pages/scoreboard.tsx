@@ -3,15 +3,62 @@ import Header from "../page-components/header"
 
 import PigWithTgLogo from "../assets/PigWithTgLogo.svg"
 import FullPig from "../assets/FullPig.svg"
+import Loader from "../assets/loading-spinner.svg"
 
 import "../css/scoreboard.css"
-import getPretendentArray from "../modules/render-pretendent"
-// import { getBalance } from "../api/requests"
+import { useInfiniteQuery } from "@tanstack/react-query"
+import { useEffect, useRef } from "react"
+import { getDataOfscoreBoard } from "../api/api"
+import { setSingleDiv } from "../modules/singleUserScore"
+
 const Scoreboard = () => {
-  const pretendentsArray = getPretendentArray()
   const linkToTgBot = () => document.location = 'tg://resolve?domain=test_piggygame_bot'
   const linkToTgCommunity = () => document.location = 'tg://resolve?domain=piggyhodl_news'
-  
+  const loadMoreRef = useRef<HTMLDivElement | null>(null);
+
+  const {
+    data,
+    fetchNextPage,
+    hasNextPage,
+    isFetchingNextPage,
+    status,
+    error
+  } = useInfiniteQuery({
+    queryKey: ["listOfPretendents"],
+    queryFn: ({ pageParam = 0 }) => getDataOfscoreBoard(10, pageParam),
+    initialPageParam: 0,
+    getNextPageParam: (lastPage, allPages) => {
+      const totalLoaded = allPages.flatMap(page => page.items).length;
+      if (totalLoaded >= lastPage.totalItems) return undefined;
+      return totalLoaded;
+    },
+  });
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      entries => {
+        if (entries[0].isIntersecting && hasNextPage && !isFetchingNextPage) {
+          fetchNextPage();
+        }
+      },
+      {
+        root: document.querySelector("#ScoreBoardList"),
+        rootMargin: "20px"
+      }
+    );
+
+    const currentRef = loadMoreRef.current;
+    if (currentRef) observer.observe(currentRef);
+
+    return () => {
+      if (currentRef) observer.unobserve(currentRef);
+    };
+  }, [hasNextPage, isFetchingNextPage, fetchNextPage]);
+
+  if (status === 'error')
+    return (<p>Ошибка: {error.message}</p>);
+
+  const pretendentArray = data?.pages.flatMap(page => page.items)
 
   return (
     <>
@@ -25,16 +72,19 @@ const Scoreboard = () => {
               </p>
               <div className="w-35.5 h-12 flex shrink-0 justify-center items-center text-[#4B4B4B] px-3.75 gap-1 rounded-3xl bgcPink">
                 <p className="w-27.5 h-5 flex font-medium text-[16px] leading-5 content-center hankenGrotesk" >
-                  {pretendentsArray.quantityPretendents} pretendents
+                  {data?.pages[0]?.totalItems} pretendents
                 </p>
               </div>
             </div>
             <div id="ScoreBoardList" className="w-133.25 h-141 flex flex-col gap-3 mt-5 overflow-scroll text-center">
-              {pretendentsArray.Elements.map((pretendent, id) => {
-                return <div key={id} className="w-133.25 h-21 rounded-3xl py-3 px-5 flex flex-col gap-3 transition-colors duration-600 hover:bg-[#FFF2FE]">
-                  {pretendent}
+              {pretendentArray?.map((pretendent, id) => setSingleDiv(pretendent, id + 1))}
+              {isFetchingNextPage && (
+                <div className="text-center mt-2 flex flex-col ">
+                  <img src={Loader} className="w-12.5" alt="Loading more..." />
+                  <span>Loading...</span>
                 </div>
-              })}
+              )}
+              <div ref={loadMoreRef} className="h-10" />
             </div>
           </article>
 

@@ -2,11 +2,18 @@ import Piglet from "../assets/Piglet.svg"
 import Ticket from "../assets/ticket-svgrepo.svg"
 import MiniPeople from "../assets/MiniPeople.svg"
 
-import { Pretendent } from "./render-pretendent" //type import
+type Pretendent = {
+    id: number
+    username: string
+    nullable?: true
+    pigsAmount: number
+    ticketsAmount: number
+    referrals: number
+}
 
-export default function GetUserScore(item: Pretendent, userId: number) {
+export function setSingleDiv(item: Pretendent, userId: number) {
     return (
-        <>
+        <div key={userId} className="w-133.25 h-21 rounded-3xl py-3 px-5 flex flex-col gap-3 transition-colors duration-600 hover:bg-[#FFF2FE]">
             <div className="w-[493px] h-[24px] flex gap-[16px] items-center">
                 <div className="w-[393px] h-[20px] flex gap-[4px] items-center">
                     <p className="w-[21px] h-[21px] flex font-semibold text-[16px] tracking-[0%] leading-[20px] text-[#4B4B4B]">
@@ -20,7 +27,7 @@ export default function GetUserScore(item: Pretendent, userId: number) {
                     <p className="w-[49px] h-[20px] font-[Hanken_Grotesk] font-semibold text-[16px] tracking-[0%] leading-[20px] justify-end text-[#4B4B4B]">
                         {item.pigsAmount}
                     </p>
-                    <img src={Piglet} alt="Пятачок" className="w-[24px] h-[24px] left-[21px]"/>
+                    <img src={Piglet} alt="Пятачок" className="w-[24px] h-[24px] left-[21px]" />
                 </div>
             </div>
             <div className="w-[493px] h-[24px] flex justify-between">
@@ -37,6 +44,6 @@ export default function GetUserScore(item: Pretendent, userId: number) {
                     <img src={MiniPeople} alt="Мини человечек" />
                 </div>
             </div>
-        </>      
+        </div>
     );
 }
