@@ -1,54 +1,72 @@
-# React + TypeScript + Vite
+# Тестовое задание
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
-Currently, two official plugins are available:
+## Дизайн: [https://www.figma.com/design/D0iAQUebfH1417ksmyA85o/PiggyHODL-|-Game-|-Web?node-id=0-1&t=ahjdVnTN3UWsuRbJ-1](https://www.figma.com/design/D0iAQUebfH1417ksmyA85o/PiggyHODL-%7C-Game-%7C-Web?node-id=0-1&t=ahjdVnTN3UWsuRbJ-1)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+# Описание
 
-## Expanding the ESLint configuration
+Разработать SPA с таблицей лидеров для игры проекта PiggyHODL в соответствии с предоставленным код-стайлом, а также используя указанные инструменты и библиотеки. Ссылки на необходимые ресурсы приложены в разделе “Материалы”.
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+Проект должен быть создан с помощью консольной команды `npm create vite@latest` и написан на `typescript` + `react`. Для стилизации следует использовать `tailwind`.
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+Приложение состоит из двух страниц:
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+- Scoreboard (главная) - расположена в корне сайта (роут `/`);
+- Game rules - расположена по роуту `/game-rules`.
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+Для реализации навигации следует использовать библиотеку `react-router` (в документации см. инструкцию для Data mode).
 
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
-```
+На странице Scoreboard необходимо сделать запросы к API для получения списка лидеров и баланса банка. Общее кол-во пользователей вернется вместе с их списком в свойстве `totalItems`. Для http запросов следует использовать библиотеку `axios`, для управления запросами и кэширования - библиотеку `@tanstack/react-query`. Эндпоинты API описаны в Swagger (см. раздел “Материалы”).
+
+Логотип в шапке должен должен вести на главную страницу, ссылка “Game rules” - на страницу Game rules. Кнопка “Join the game” должна вести в TMA (Telegram mini app). Кнопка “Subscribe” в блоке страницы должна вести на Telegram-канал, кнопка “Play PiggyGame”, как и “Join the game” должна вести в TMA. Ссылки “Terms of use” и “Privacy policy” в подвале ведут на соответствующие страницы.
+
+На странице Game rules должны быть представлены правила игры в соответствии с дизайном.
+
+# Необязательные задачи
+
+Данные задачи необязательно выполнять для сдачи тестового задания.
+
+К ним следует приступать **только после завершения основного задания**.
+
+Количеством звездочек (*) описана сложность задачи.
+
+- Добавить hover-эффект кнопкам и ссылкам: при наведении они должны становиться на 50% прозрачными (`opacity: 0.5`). Эффект должен быть анимирован, длительность анимации - 150 мс. Ссылки должны также подчеркиваться при наведении (это анимировать не нужно).
+- Добавить лоадеры для таблицы лидеров
+- Добавить скролл таблице лидеров так, чтобы высота страницы не менялась, если пользователей больше, чем отображено в дизайне. Сделать это можно двумя способами:
+    - Добавить скролл в блок “Scoreboard”, т.е. скроллиться будет не вся страница, а только список пользователей.
+    - * Сделать так, чтобы при скролле страницы скроллился только список пользователей (все остальные элементы страницы должны оставаться неподвижными)
+- ** Реализовать бесконечный список для таблицы лидеров (задание со звёздочкой).
+    1. Сначала запрашиваются 10 пользователей.
+    2. При скролле до последнего пользователя под ним (пользователем) должен появляться лоадер (например, текст “Загрузка…” или иконка-спиннер).
+    3. Когда появляется лоадер, к API должен отправляться запрос на получение **следующих** 10-ти пользователей. Лоадер должен отображаться, пока не придет ответ с API.
+    4. Новые 10 пользователей добавляются в конец таблицы лидеров. Если список не полный (т.е. API может вернуть еще пользователей), то цикл повторяется с п.2. Если список полный (т.е. API вернуло всех пользователей), то при скролле до конца таблицы ничего больше не происходит. Проверить, может ли API вернуть еще пользователей, можно по свойству `totalItems: number` в теле ответа - оно показывает общее доступное кол-во пользователей.
+
+# Материалы
+
+### Бекэнд (API):
+
+API: https://devgame.piggyhodl.xyz/api
+
+Swagger: https://devgame.piggyhodl.xyz/api/swagger/index.html
+
+### Links to external resources:
+
+Privacy Policy:  https://telegram.org/tos/mini-apps
+
+Terms of use: https://telegram.org/tos/mini-apps
+
+Телеграм-канал: @piggyhodl_news
+
+TMA: @test_piggygame_bot
+
+### Документация:
+
+Vite: https://vite.dev/guide
+
+Tailwind: https://tailwindcss.com/docs
+
+React Router: https://reactrouter.com/home
+
+Axios: https://axios-http.com/docs/intro
+
+Tanstack Query для React: https://tanstack.com/query/latest/docs/framework/react/overview
