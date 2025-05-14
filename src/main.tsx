@@ -21,7 +21,7 @@ const router = createBrowserRouter([
       { index: true, Component: Scoreboard },
       { path: "game-rules", Component: Game_rules }
     ]
-  }
+  },
 ])
 
 createRoot(document.getElementById('root')!).render(

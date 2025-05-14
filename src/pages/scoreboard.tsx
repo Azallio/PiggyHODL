@@ -59,7 +59,6 @@ const Scoreboard = () => {
     return (<p>Ошибка: {error.message}</p>);
 
   const pretendentArray = data?.pages.flatMap(page => page.items)
-
   return (
     <>
       <Header />
@@ -79,7 +78,7 @@ const Scoreboard = () => {
             <div id="ScoreBoardList" className="w-133.25 h-141 flex flex-col gap-3 mt-5 overflow-scroll text-center">
               {pretendentArray?.map((pretendent, id) => setSingleDiv(pretendent, id + 1))}
               {isFetchingNextPage && (
-                <div className="text-center mt-2 flex flex-col ">
+                <div className="text-center mt-2 flex flex-col">
                   <img src={Loader} className="w-12.5" alt="Loading more..." />
                   <span>Loading...</span>
                 </div>
