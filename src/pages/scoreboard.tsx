@@ -5,7 +5,8 @@ import PigWithTgLogo from "../assets/PigWithTgLogo.svg"
 import FullPig from "../assets/FullPig.svg"
 import Loader from "../assets/loading-spinner.svg"
 
-import "../css/scoreboard.css"
+import "../css/index.css"
+
 import { useInfiniteQuery } from "@tanstack/react-query"
 import { useEffect, useRef } from "react"
 import { getDataOfscoreBoard } from "../api/api"
@@ -62,11 +63,11 @@ const Scoreboard = () => {
   return (
     <>
       <Header />
-      <main className="w-360 h-168.5 px-43.75 py-3.75 gap-6 mr-[3.5%] tracking-normal">
+      <main className="w-360 h-168.5 px-43.75 py-3.75 gap-6 tracking-normal">
         <section className="w-133.25 h-158.5 flex flex-nowrap gap-6 ">
-          <article>
-            <div className="w-133.25 h-12 flex justify-between shrink-0 items-center pl-[5%] text-[#D874B9]">
-              <p className="w-97.75 h-9.5 text-4xl leading-9.5 mr-[13%] uppercase font-semibold sourseSerif4">
+          <article className="flex flex-col gap-6">
+            <div className="w-133.25 h-12 flex justify-between shrink-0 items-center text-[#D874B9]">
+              <p className="w-97.75 h-9.5 text-4xl leading-9.5 uppercase font-semibold sourseSerif4 tracking-[-1px]">
                 Scoreboard
               </p>
               <div className="w-35.5 h-12 flex shrink-0 justify-center items-center text-[#4B4B4B] px-3.75 gap-1 rounded-3xl bgcPink">
@@ -75,7 +76,7 @@ const Scoreboard = () => {
                 </p>
               </div>
             </div>
-            <div id="ScoreBoardList" className="w-133.25 h-141 flex flex-col gap-3 mt-5 overflow-scroll text-center">
+            <div id="ScoreBoardList" className="w-133.25 h-141 flex flex-col gap-3 overflow-scroll text-center">
               {pretendentArray?.map((pretendent, id) => setSingleDiv(pretendent, id + 1))}
               {isFetchingNextPage && (
                 <div className="text-center mt-2 flex flex-col">
